@@ -47,17 +47,18 @@
             ],
         ];
 
-        // Stampare tutti i dati per ogni hotel all'interno della struttura HTML
-        foreach ($hotels as $hotel): ?>
-            <div class="hotel">
-                <h2><?= $hotel['name'] ?></h2>
-                <p><strong>Descrizione:</strong> <?= $hotel['description'] ?></p>
-                <p><strong>Parcheggio disponibile:</strong> <?= $hotel['parking'] ? 'Sì' : 'No' ?></p>
-                <p><strong>Voto:</strong> <?= $hotel['vote'] ?></p>
-                <p><strong>Distanza dal centro:</strong> <?= $hotel['distance_to_center'] ?> km</p>
-                <br> <!-- Aggiungi un separatore tra gli hotel -->
-            </div>
-        <?php endforeach; ?>
+
+        foreach($hotels as $hotel){
+            echo "nome: " . $hotel['name'];
+            echo "descrizione: " . $hotel['description'];
+            echo "parcheggio: " . $hotel['parking'];
+            echo "voto: " . $hotel['vote'];
+            echo "distanza: " . $hotel['distance_to_center'];
+
+            
+        }
+?>
+
     </div>
 </body>
 </html>
