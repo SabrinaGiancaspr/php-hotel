@@ -1,14 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista degli Hotel</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Lista degli Hotel</h1>
-        <?php
+<?php
         $hotels = [
             [
                 'name' => 'Hotel Belvedere',
@@ -48,17 +38,27 @@
         ];
 
 
-        foreach($hotels as $hotel){
-            echo "nome: " . $hotel['name'];
-            echo "descrizione: " . $hotel['description'];
-            echo "parcheggio: " . $hotel['parking'];
-            echo "voto: " . $hotel['vote'];
-            echo "distanza: " . $hotel['distance_to_center'];
 
-            
-        }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista degli Hotel</title>
+</head>
+<body>
+<div class="container">
+        <h1>Lista degli Hotel</h1>
+        
 
+<?php 
+    foreach ($hotels as $hotel) {
+        foreach ($hotel as $key => $value) {
+           echo "<p> $key: $value </p>";
+        }
+    }
+?>  
     </div>
+
 </body>
 </html>
