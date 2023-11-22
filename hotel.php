@@ -50,27 +50,39 @@
 <body>
 <div class="container">
         <h1>Lista degli Hotel</h1>
+        <form method="GET">
+            <label for="parking">Mostra hotel con parcheggio:</label>
+            <input type="checkbox" id="parking" name="parking" value="true">
+            <input type="submit" value="Filtra">
+        </form>
         <table class="table">
-            <tr>
-                <?php 
-                    foreach ($hotels[0] as $key => $value) {
-                    echo "<th> $key </th>";
-                    } 
-                ?>
-            </tr>
-            <?php 
-                foreach ($hotels as $hotel) {
-                    echo "<tr>";
-                    foreach ($hotel as $key => $value) {
-                    echo "<td> $value </td>";
-                    }
-                    echo '</tr>';
-                }
-            ?>  
-
+            <?php foreach ($hotels as $hotel) { ?>
+                <tbody>
+                <tr>
+                    <td><?php echo $hotel['name'] ?></td>
+                    <td><?php echo $hotel['description'] ?></td>
+                    <td>
+                        <?php
+                            if($hotel['parking'] === true){
+                                echo 'si';
+                            } else {
+                                echo 'no';
+                            }
+                        ?>
+                    </td>
+                    <td><?php echo $hotel['vote'] ?></td>
+                    <td><?php echo $hotel['distance_to_center']?></td>
+                </tr>
+                </tbody>
+            <?php } ?>
+            <thead>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
+            </thead>
         </table>
-
     </div>
-
 </body>
 </html>
