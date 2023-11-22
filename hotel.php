@@ -50,11 +50,6 @@
 <body>
 <div class="container">
         <h1>Lista degli Hotel</h1>
-        <form method="GET">
-            <label for="parking">Mostra hotel con parcheggio:</label>
-            <input type="checkbox" id="parking" name="parking" value="true">
-            <input type="submit" value="Filtra">
-        </form>
         <table class="table">
             <?php foreach ($hotels as $hotel) { ?>
                 <tbody>
