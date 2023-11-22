@@ -45,19 +45,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista degli Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
         <h1>Lista degli Hotel</h1>
-        
+        <table class="table">
+            <tr>
+                <?php 
+                    foreach ($hotels[0] as $key => $value) {
+                    echo "<th> $key </th>";
+                    } 
+                ?>
+            </tr>
+            <?php 
+                foreach ($hotels as $hotel) {
+                    echo "<tr>";
+                    foreach ($hotel as $key => $value) {
+                    echo "<td> $value </td>";
+                    }
+                    echo '</tr>';
+                }
+            ?>  
 
-<?php 
-    foreach ($hotels as $hotel) {
-        foreach ($hotel as $key => $value) {
-           echo "<p> $key: $value </p>";
-        }
-    }
-?>  
+        </table>
+
     </div>
 
 </body>
